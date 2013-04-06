@@ -6,7 +6,7 @@ Requires Grails 2.1.1
 How to run
 ----------
 
-Setup an Twitter App, configure app by adding into @Config.groovy@
+Setup an Twitter App, configure app by adding into `Config.groovy`
 
 ```
 grails.plugins.springsecurity.twitter.consumerKey=%COMSUMER KEY%
