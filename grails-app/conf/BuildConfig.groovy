@@ -45,7 +45,7 @@ grails.project.dependency.resolution = {
         build ":tomcat:$grailsVersion"
 
         compile "org.grails.plugins:spring-security-core:1.2.7.2"
-        compile "org.grails.plugins:spring-security-twitter:0.5"
+        compile "org.grails.plugins:spring-security-twitter:0.5.4"
     }
 }
 
