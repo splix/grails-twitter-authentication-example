@@ -104,3 +104,6 @@ grails.plugins.springsecurity.authority.className = 'com.the6hours.example.Role'
 //
 //
 grails.plugins.springsecurity.twitter.domain.classname='com.the6hours.example.TwitterUser'
+
+//use custom roles (by default it's ROLE_USER,ROLE_TWITTER)
+//grails.plugins.springsecurity.twitter.autoCreate.roles='ROLE_USER,ROLE_TWITTER,ROLE_SOCIAL'
