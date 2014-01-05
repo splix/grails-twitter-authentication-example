@@ -25,6 +25,8 @@ grails.project.dependency.resolution = {
         mavenLocal()
         mavenCentral()
 
+        mavenRepo 'http://repo.spring.io/milestone'
+
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
@@ -38,14 +40,12 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":hibernate:$grailsVersion"
-        runtime ":jquery:1.8.0"
+        runtime ':hibernate:3.6.10.6'
         runtime "org.grails.plugins:resources:1.1.6"
+        build ':tomcat:7.0.47'
 
-        build ":tomcat:$grailsVersion"
-
-        compile "org.grails.plugins:spring-security-core:1.2.7.2"
-        compile "org.grails.plugins:spring-security-twitter:0.5.4"
+        compile "org.grails.plugins:spring-security-core:2.0-RC2"
+        compile "org.grails.plugins:spring-security-twitter:0.6"
     }
 }
 

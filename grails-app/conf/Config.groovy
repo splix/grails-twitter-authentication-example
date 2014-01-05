@@ -94,16 +94,52 @@ log4j = {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.the6hours.example.User'
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.the6hours.example.UserRole'
-grails.plugins.springsecurity.authority.className = 'com.the6hours.example.Role'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.the6hours.example.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.the6hours.example.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.the6hours.example.Role'
+grails.plugin.springsecurity.rejectIfNoRule = false
+grails.plugin.springsecurity.fii.rejectPublicInvocations = false
+grails.plugin.springsecurity.securityConfigType = "Requestmap"
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+   '/':                  ['permitAll'],
+   '/**/js/**':          ['permitAll'],
+   '/**/css/**':         ['permitAll'],
+   '/**/images/**':      ['permitAll'],
+   '/**/favicon.ico':    ['permitAll'],
+   '/login/**':          ['permitAll'],
+   '/logout/**':         ['permitAll']
+]
 
 //
 // Twitter Plugin configuretion
 // -- Notice that Twitter keys are configured at $HOME/.grails/s2twitter-config.properties (see head of this file)
 //
 //
-grails.plugins.springsecurity.twitter.domain.classname='com.the6hours.example.TwitterUser'
+grails.plugin.springsecurity.twitter.domain.classname='com.the6hours.example.TwitterUser'
 
 //use custom roles (by default it's ROLE_USER,ROLE_TWITTER)
 //grails.plugins.springsecurity.twitter.autoCreate.roles='ROLE_USER,ROLE_TWITTER,ROLE_SOCIAL'
+
+// Uncomment and edit the following lines to start using Grails encoding & escaping improvements
+
+/* remove this line 
+// GSP settings
+grails {
+    views {
+        gsp {
+            encoding = 'UTF-8'
+            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
+            codecs {
+                expression = 'html' // escapes values inside null
+                scriptlet = 'none' // escapes output from scriptlets in GSPs
+                taglib = 'none' // escapes output from taglibs
+                staticparts = 'none' // escapes output from static template parts
+            }
+        }
+        // escapes all not-encoded output at final stage of outputting
+        filteringCodecForContentType {
+            //'text/html' = 'html'
+        }
+    }
+}
+remove this line */
